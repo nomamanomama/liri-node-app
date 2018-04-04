@@ -59,7 +59,7 @@ function tweet(){
     var params = { screen_name: 'AP' , count: 20};
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error) {
-            var output = "\nMY TWEETS \n";
+            var output = "MY TWEETS: \n";
             tweets.forEach(element => 
                 {
                     output += element.text + '\n' + element.created_at + '\n\n';
@@ -81,13 +81,13 @@ function songInfo(songName) {
     //console.log("show song info");
 
     if (songName === ""){
-        songName = "The Sign";
+        songName = "The Sign by Ace of Base";
     }
     spotify.search({ type: 'track', query: songName, limit: 5 }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-        var output = "\n SPOTIFY THIS SONG " + songName + "\n";
+        var output = "SPOTIFY THIS SONG: " + songName + "\n";
         data.tracks.items.forEach(element => {
             //console.log(element);
             // * Artist(s)
@@ -141,7 +141,7 @@ function movie(movieName) {
             var movie = JSON.parse(body);
             //noconsole.log(movie);
             //build output string
-            var output = "\n MOVIE THIS " + movieName + "\n";
+            var output = "MOVIE THIS: " + movieName + "\n";
             //    * Title of the movie.
             output += "Name: " + movie.Title + '\n';
             //    * Year the movie came out.
@@ -175,7 +175,7 @@ function movie(movieName) {
 function randomInfo() {
     fs.readFile("./random.txt", "utf8", function (error, data) {
         console.log ("Processing do what it says...");
-        logThis ("\n DO WHAT IT SAYS \n");
+        logThis ("DO WHAT IT SAYS \n");
         if (error) return error;
 
         //console.log(data);
@@ -187,7 +187,8 @@ function randomInfo() {
 }
 
 function logThis(logComment) {
-    fs.appendFile("log.txt", logComment, function (err) {
+    var separator = "==========================================================\n\n";
+    fs.appendFile("log.txt", separator + logComment + "\n", function (err) {
         // If an error was experienced we say it.
         if (err) {
             console.log(err);
