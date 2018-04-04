@@ -17,7 +17,6 @@ Technology
 Node.js
 npm packages: fs, request, node-spotify-api, twitter
 
+Demo:
+https://github.com/nomamanomama/liri-node-app/blob/master/LIRI/LIRI_media/LIRI.gif
 
-
-
-Who maintains and contributes to the project
