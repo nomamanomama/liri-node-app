@@ -18,5 +18,5 @@ Node.js
 npm packages: fs, request, node-spotify-api, twitter
 
 Demo:
-https://github.com/nomamanomama/liri-node-app/blob/master/LIRI/LIRI_media/LIRI.gif
+![https://github.com/nomamanomama/liri-node-app/blob/master/LIRI/LIRI_media/LIRI.gif] "LIRI"
 
